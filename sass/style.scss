@@ -10,4 +10,12 @@
 // end @mixins
 
 // @extends
+%container {
+	width: 700px;
+	margin: 0 auto;
+}
 // end @extends
+
+.hero {
+	@extend %container;
+}
