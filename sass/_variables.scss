@@ -1,3 +1,19 @@
-/* ==========================================================================
-   Variables                                                    
-   ========================================================================== */
+//	==========================================================================
+//	Variables                                                    
+//	===========================================================================
+
+ 	// $containers: container container-fluid;
+
+ 	$context: 1920;
+
+	$fontFamily-base: 'Lora', serif;
+	$fontFamily-accent: 'Roboto', sans-serif;
+ 	$fontSize-base: 16px;
+ 	$lineHeight-base: 2.1;
+ 	$fontWeight-base: normal;
+
+ 	$color-base: #3F3F3F;
+ 	$color-secondary: #AF8812;
+
+ 	$link-base: $color-secondary;
+	$link-secondary: lighten($link-base, 10%);

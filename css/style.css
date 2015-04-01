@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 /*	==========================================================================
 	Clearfix                                                    
 	==========================================================================	*/
@@ -25,15 +26,71 @@
 
 
    ========================================================================== */
-/* ==========================================================================
-   Variables                                                    
-   ========================================================================== */
-/*	==========================================================================
-	Functions                                                    
-	==========================================================================	*/
-/*	==========================================================================
-	Mixins                                                    
-	==========================================================================	*/
+/*  ==========================================================================
+    Base                                                    
+    ==========================================================================  */
+/** 
+ * Box Sizing
+ * 
+ * Applies a natural box layout model to all elements so that width and padding 
+ * are essentially combined, making responsive styles easier to manage.
+ */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #fff;
+  color: #3F3F3F;
+  font-family: "Lora", serif;
+  font-size: 16px;
+  line-height: 2.1; }
+
+/**
+ * Page Center
+ *
+ * Apply .container to full-width modules.
+ */
+.container, .container-fluid {
+  float: none;
+  margin: 0 auto; }
+
+.container {
+  max-width: 36.45833%; }
+
+.container-fluid {
+  max-width: 100%; }
+
+a {
+  color: #AF8812; }
+  a:hover, a:focus {
+    color: #ddac17; }
+
+hr {
+  color: #ccc;
+  background-color: #ccc;
+  height: 1px;
+  border: none; }
+
+/* Highlighted Text */
+::-moz-selection {
+  color: #3F3F3F;
+  background: #AF8812;
+  text-shadow: none; }
+
+::selection {
+  color: #3F3F3F;
+  background: #AF8812;
+  text-shadow: none; }
+
 /* ==========================================================================
    Typography
    ========================================================================== */
@@ -52,12 +109,12 @@ sub {
 
 /* Headings */
 /* Lists */
-ul .unstyled {
+ul.unstyled {
   list-style: none;
   margin: 0;
   padding: 0; }
 
-ol .unstyled {
+ol.unstyled {
   list-style: none;
   margin: 0;
   padding: 0; }

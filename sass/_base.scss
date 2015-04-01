@@ -1,82 +1,77 @@
-/* ==========================================================================
-   Base                                                    
-   ========================================================================== */
+/*  ==========================================================================
+    Base                                                    
+    ==========================================================================  */
 
 
-/** 
- * Box Sizing
- * 
- * Applies a natural box layout model to all elements so that width and padding 
- * are essentially combined, making responsive styles easier to manage.
- */
+    /** 
+     * Box Sizing
+     * 
+     * Applies a natural box layout model to all elements so that width and padding 
+     * are essentially combined, making responsive styles easier to manage.
+     */
 
-*, *:before, *:after {
-  @include prefixer(box-sizing, border-box);
-}
+    *, *:before, *:after {
+      @include prefixer(box-sizing, border-box);
+    }
 
-%document {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
+    html {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-html {
-  @extend %document;
-}
+    body {
+      @extend html;
+      // Website background color and default font styles
+      background: #fff;
+      color: $color-base;
+      font-family: $fontFamily-base;
+      font-size: $fontSize-base;
+      line-height: $lineHeight-base;
+    }
 
-body {
-  @extend %document;
-  // Website background color and default font styles
-  background: #fff;
-  color: ;
-  font-family: ;
-  font-size: ;
-  line-height: ;
-}
+    /**
+     * Page Center
+     *
+     * Apply .container to full-width modules.
+     */
 
-/**
- * Page Center
- *
- * Apply .page-center to full-width modules.
- */
+    %container {
+      float: none;
+      margin: 0 auto;
+    }
 
-.container-fluid {
-  float: none;
-  max-width: ;
-  margin: 0 auto;
-}
+    .container {
+      @extend %container;
+      max-width: fluidize(700, $context);
+    }
 
-.container {
-  float: none;
-  max-width: ;
-  margin: 0 auto;
-}
+    .container-fluid {
+      @extend %container;
+      max-width: 100%;
+    }
 
-a {
-  color: ;
-  &:hover, &:focus { color: }
-}
 
-hr {
-  color: #ccc;
-  background-color: #ccc;
-  height: 1px;
-  border: none;
-}
+    a {
+      color: $link-base;
+      &:hover, &:focus { color: $link-secondary; }
+    }
 
-/* Highlighted Text */
-::-moz-selection {
-  color: #fff;
-  background: ;
-  text-shadow: none;
-}
-::selection {
-  color: #fff;
-  background: ;
-  text-shadow: none;
-}
+    hr {
+      color: #ccc;
+      background-color: #ccc;
+      height: 1px;
+      border: none;
+    }
 
-/* Corrects width issues in table elements created via the wysiwyg editor */
-table tr td img {
-    max-width: initial;
-}
+    /* Highlighted Text */
+    ::-moz-selection {
+      color: $color-base;
+      background: $color-secondary;
+      text-shadow: none;
+    }
+    ::selection {
+      color: $color-base;
+      background: $color-secondary;
+      text-shadow: none;
+    }
