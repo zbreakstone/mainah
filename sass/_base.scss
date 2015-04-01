@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Base                                                    
+   ========================================================================== */
+
+
+/** 
+ * Box Sizing
+ * 
+ * Applies a natural box layout model to all elements so that width and padding 
+ * are essentially combined, making responsive styles easier to manage.
+ */
+
+*, *:before, *:after {
+  @include prefixer(box-sizing, border-box);
+}
+
+%document {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @extend %document;
+}
+
+body {
+  @extend %document;
+  // Website background color and default font styles
+  background: #fff;
+  color: ;
+  font-family: ;
+  font-size: ;
+  line-height: ;
+}
+
+/**
+ * Page Center
+ *
+ * Apply .page-center to full-width modules.
+ */
+
+.container-fluid {
+  float: none;
+  max-width: ;
+  margin: 0 auto;
+}
+
+.container {
+  float: none;
+  max-width: ;
+  margin: 0 auto;
+}
+
+a {
+  color: ;
+  &:hover, &:focus { color: }
+}
+
+hr {
+  color: #ccc;
+  background-color: #ccc;
+  height: 1px;
+  border: none;
+}
+
+/* Highlighted Text */
+::-moz-selection {
+  color: #fff;
+  background: ;
+  text-shadow: none;
+}
+::selection {
+  color: #fff;
+  background: ;
+  text-shadow: none;
+}
+
+/* Corrects width issues in table elements created via the wysiwyg editor */
+table tr td img {
+    max-width: initial;
+}

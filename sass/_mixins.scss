@@ -1,0 +1,11 @@
+/*	==========================================================================
+	Mixins                                                    
+	==========================================================================	*/
+
+	@mixin prefixer($property, $value) { // Used for creating vendor prefixes
+		-webkit-#{$property}: $value;
+		-moz-#{$property}: $value;
+		-o-#{$property}: $value;
+		-ms-#{$property}: $value;
+		#{$property}: $value;
+	}

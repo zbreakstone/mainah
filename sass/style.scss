@@ -1,21 +1,41 @@
 // Include any @imports above
 
-// $variables
-// end $variables
+@import "clearfix";
 
-// @functions
-// end @functions
+/* ==========================================================================
+   Index:         
+  1. BASE STYLES   
+    - Variables
+    - Functions
+    - Mixins
+    - Base
+    - Typography
+  2. MAIN NAVIGATION
+    - Custom Menu Primary
+    - Mobile Menu
+  3. COMPONENTS
+    - Forms
+    - Buttons
+  4. MISCELLANOUS
+  5. MOBILE MEDIA QUERIES
+   ========================================================================== */
 
-// @mixins
-// end @mixins
 
-// @extends
-%container {
-	width: 700px;
-	margin: 0 auto;
-}
-// end @extends
 
-.hero {
-	@extend %container;
-}
+
+
+
+
+
+/* ==========================================================================
+
+
+   1. BASE STYLES                                        
+
+
+   ========================================================================== */
+@import "variables";
+@import "functions";
+@import "mixins";
+// @import "base";
+@import "typography";
