@@ -178,6 +178,7 @@ ol.unstyled {
   display: block;
   position: fixed;
   top: 0;
+  z-index: 3;
   width: 22.39583%;
   height: 100vh;
   background: #0f1010; }
@@ -265,6 +266,22 @@ ol.unstyled {
 
 
 	==========================================================================	*/
+.header__menu {
+  display: block;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer; }
+  .header__menu .fa.fa-bars {
+    font-size: 28px;
+    line-height: 44px; }
+
 .hero {
   height: 100vh;
   padding: 26px;
@@ -279,26 +296,29 @@ ol.unstyled {
       position: absolute;
       top: 50%;
       left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       width: 33.08351%;
+      min-width: 225px;
       margin: 0 auto;
       background: url(../img/hdr-thoreau.png) center center no-repeat;
       background-size: 100% auto;
       text-indent: -9999px;
       line-height: 250px; }
-      .hero__inner h1::before {
+      .hero__inner h1::before, .hero__inner h1::after {
         content: '';
         display: block;
-        position: absolute;
+        position: absolute; }
+      .hero__inner h1::before {
         top: 30px;
         left: 15px;
         height: 31px;
         width: 53px;
         background: url(../img/hdr-thoreau-the.png) center center no-repeat; }
       .hero__inner h1::after {
-        content: '';
-        display: block;
-        position: absolute;
         bottom: 18px;
         right: -16px;
         height: 40px;
