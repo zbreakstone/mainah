@@ -42,51 +42,7 @@
 	}
 
 
-	@mixin menu($menus) {
-		@each $menu in $menus {
-			&--#{$menu} {
-				#{$menu}: fluidize(-430, $context);
-				@include prefixer($property: transition, $value: $menu .25s ease);
-				&.open {
-					#{$menu}: 0;
-					@if $menu == right {
-						@include prefixer($property: animation, $value: slideFromRight .25s ease)
-					} @else {
-						@include prefixer($property: animation, $value: slideFromLeft .25s ease)
-					}
-				}
-				& .menu__bar {
-					position: absolute;
-					left: 0;
-					right: 0;
-					height: 54px;
-					background: #292B2B;
-					&--top {
-						top: 0;
-						color: #fff;
-						.fa.fa-times {
-							display: inline-block;
-							position: absolute;
-							top: 50%;
-							@if $menu == right {
-								left: 0;
-								margin: 0 0 0 fluidize($target: 15, $context: 430);
-							} @else {
-								right: 0;
-								margin: 0 fluidize($target: 15, $context: 430) 0 0;
-							}
-							@include prefixer($property: transform, $value: translateY(-50%));
-							font-size: wAdjust(fluidize($target: 22px, $context: $fontSize-base, $type: font));
-							cursor: pointer;
-						}
-					}
-					&--bottom {
-						bottom: 0;
-					}
-				}
-			}
-		}
-	}
+	
 
 
 
