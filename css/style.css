@@ -2,30 +2,31 @@
 /*	==========================================================================
 	Clearfix                                                    
 	==========================================================================	*/
-/* ==========================================================================
-   Index:         
-  1. BASE STYLES   
-    - Variables
-    - Functions
-    - Mixins
-    - Base
-    - Typography
-  2. MAIN NAVIGATION
-    - Custom Menu Primary
-    - Mobile Menu
-  3. COMPONENTS
-    - Forms
-    - Buttons
-  4. MISCELLANOUS
-  5. MOBILE MEDIA QUERIES
-   ========================================================================== */
-/* ==========================================================================
+/*	==========================================================================
+	Index:         
+	1. BASE STYLES   
+	    - Variables
+	    - Functions
+	    - Mixins
+	    - Base
+	    - Typography
+	2. MAIN NAVIGATION
+		- Custom Menu Primary
+		- Mobile Menu
+	3. COMPONENTS
+		- Sections
+	    - Forms
+	    - Buttons
+	4. MISCELLANOUS
+	5. MOBILE MEDIA QUERIES
+	==========================================================================	*/
+/*	==========================================================================
 
 
-   1. BASE STYLES                                        
+	1. BASE STYLES                                        
 
 
-   ========================================================================== */
+	==========================================================================	*/
 /*  ==========================================================================
     Base                                                    
     ==========================================================================  */
@@ -43,7 +44,7 @@
   box-sizing: border-box; }
 
 html, body {
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0; }
 
@@ -61,7 +62,8 @@ body {
  */
 .container, .container-fluid {
   float: none;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 60px 0; }
 
 .container {
   max-width: 36.45833%; }
@@ -82,18 +84,18 @@ hr {
 
 /* Highlighted Text */
 ::-moz-selection {
-  color: #3F3F3F;
-  background: #AF8812;
+  color: #fff;
+  background: #6e6e6f;
   text-shadow: none; }
 
 ::selection {
-  color: #3F3F3F;
-  background: #AF8812;
+  color: #fff;
+  background: #6e6e6f;
   text-shadow: none; }
 
-/* ==========================================================================
-   Typography
-   ========================================================================== */
+/*	==========================================================================
+	Typography
+	==========================================================================	*/
 /* Basic text */
 sup, sub {
   position: relative;
@@ -108,6 +110,13 @@ sub {
   bottom: -0.25em; }
 
 /* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+h1 {
+  font-size: 2em; }
+
 /* Lists */
 ul.unstyled {
   list-style: none;
@@ -120,5 +129,180 @@ ol.unstyled {
   padding: 0; }
 
 /* Quotes */
+/*	==========================================================================
+	Animations
+	==========================================================================	*/
+@-webkit-keyframes slideFromLeft {
+  0% {
+    left: -430px; }
+  100% {
+    left: 0px; } }
+@keyframes slideFromLeft {
+  0% {
+    left: -430px; }
+  100% {
+    left: 0px; } }
+@-webkit-keyframes slideFromRight {
+  0% {
+    right: -430px; }
+  100% {
+    right: 0px; } }
+@keyframes slideFromRight {
+  0% {
+    right: -430px; }
+  100% {
+    right: 0px; } }
+/**
+ * Main Styling
+ *
+ * Add main styling below.
+ */
+.site {
+  position: relative;
+  z-index: 0;
+  height: 100vh; }
+
+/*	==========================================================================
+
+
+	2. MAIN NAV                                        
+
+
+	==========================================================================	*/
+	/**
+     * Desktop Menu
+     *
+     * Add main menu styling below.
+     */
+.menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 22.39583%;
+  height: 100vh;
+  background: #0f1010; }
+  .menu--left {
+    left: -22.39583%;
+    -webkit-transition: left 0.25s ease;
+    -moz-transition: left 0.25s ease;
+    -o-transition: left 0.25s ease;
+    -ms-transition: left 0.25s ease;
+    transition: left 0.25s ease; }
+    .menu--left.open {
+      left: 0;
+      -webkit-animation: slideFromLeft 0.25s ease;
+      -moz-animation: slideFromLeft 0.25s ease;
+      -o-animation: slideFromLeft 0.25s ease;
+      -ms-animation: slideFromLeft 0.25s ease;
+      animation: slideFromLeft 0.25s ease; }
+    .menu--left .menu__bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 54px;
+      background: #292B2B; }
+      .menu--left .menu__bar--top {
+        top: 0;
+        color: #fff; }
+        .menu--left .menu__bar--top .fa.fa-times {
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin: 0 3.48837% 0 0;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          font-size: 1.77941rem;
+          cursor: pointer; }
+      .menu--left .menu__bar--bottom {
+        bottom: 0; }
+  .menu--right {
+    right: -22.39583%;
+    -webkit-transition: right 0.25s ease;
+    -moz-transition: right 0.25s ease;
+    -o-transition: right 0.25s ease;
+    -ms-transition: right 0.25s ease;
+    transition: right 0.25s ease; }
+    .menu--right.open {
+      right: 0;
+      -webkit-animation: slideFromRight 0.25s ease;
+      -moz-animation: slideFromRight 0.25s ease;
+      -o-animation: slideFromRight 0.25s ease;
+      -ms-animation: slideFromRight 0.25s ease;
+      animation: slideFromRight 0.25s ease; }
+    .menu--right .menu__bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 54px;
+      background: #292B2B; }
+      .menu--right .menu__bar--top {
+        top: 0;
+        color: #fff; }
+        .menu--right .menu__bar--top .fa.fa-times {
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin: 0 0 0 3.48837%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          font-size: 1.77941rem;
+          cursor: pointer; }
+      .menu--right .menu__bar--bottom {
+        bottom: 0; }
+
+/*	==========================================================================
+
+
+	3. COMPONENTS                                       
+
+
+	==========================================================================	*/
+.hero {
+  height: 100vh;
+  padding: 26px;
+  background: url(../img/bg-home-splash.jpg) top left no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .hero__inner {
+    position: relative;
+    height: 100%;
+    border: 4px solid #655611; }
+    .hero__inner h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 33.08351%;
+      margin: 0 auto;
+      background: url(../img/hdr-thoreau.png) center center no-repeat;
+      background-size: 100% auto;
+      text-indent: -9999px;
+      line-height: 250px; }
+      .hero__inner h1::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: 15px;
+        height: 31px;
+        width: 53px;
+        background: url(../img/hdr-thoreau-the.png) center center no-repeat; }
+      .hero__inner h1::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 18px;
+        right: -16px;
+        height: 40px;
+        width: 89px;
+        background: url(../img/hdr-thoreau-trail.png) center center no-repeat; }
 
 /*# sourceMappingURL=style.css.map */

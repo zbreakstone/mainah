@@ -1,42 +1,140 @@
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
-// Include any @imports above
+	@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+	// Include any @imports above
 
-@import "clearfix";
+	@import "clearfix";
 
-/* ==========================================================================
-   Index:         
-  1. BASE STYLES   
-    - Variables
-    - Functions
-    - Mixins
-    - Base
-    - Typography
-  2. MAIN NAVIGATION
-    - Custom Menu Primary
-    - Mobile Menu
-  3. COMPONENTS
-    - Forms
-    - Buttons
-  4. MISCELLANOUS
-  5. MOBILE MEDIA QUERIES
-   ========================================================================== */
-
-
-
+/*	==========================================================================
+	Index:         
+	1. BASE STYLES   
+	    - Variables
+	    - Functions
+	    - Mixins
+	    - Base
+	    - Typography
+	2. MAIN NAVIGATION
+		- Custom Menu Primary
+		- Mobile Menu
+	3. COMPONENTS
+		- Sections
+	    - Forms
+	    - Buttons
+	4. MISCELLANOUS
+	5. MOBILE MEDIA QUERIES
+	==========================================================================	*/
 
 
 
 
 
-/* ==========================================================================
 
 
-   1. BASE STYLES                                        
+
+/*	==========================================================================
 
 
-   ========================================================================== */
-@import "variables";
-@import "functions";
-@import "mixins";
-@import "base";
-@import "typography";
+	1. BASE STYLES                                        
+
+
+	==========================================================================	*/
+	@import "variables";	// Import variables partial
+	@import "functions";	// Import functions partial
+	@import "mixins";		// Import mixins partial
+	@import "base";			// Import base partial
+	@import "typography";	// Import typography partial
+	@import "animations";	// Import animations partial
+
+    /**
+     * Main Styling
+     *
+     * Add main styling below.
+     */
+
+    .site {
+      position: relative;
+      z-index: 0;
+      height: 100vh;
+    }
+
+/*	==========================================================================
+
+
+	2. MAIN NAV                                        
+
+
+	==========================================================================	*/
+
+	/**
+     * Desktop Menu
+     *
+     * Add main menu styling below.
+     */
+
+	.menu {
+		display: block;
+		position: fixed;
+		top: 0;
+		width: fluidize(430, $context);
+		height: 100vh;
+		background: #0f1010;
+		@include menu($menus);
+		
+	}
+
+/*	==========================================================================
+
+
+	3. COMPONENTS                                       
+
+
+	==========================================================================	*/
+
+	.hero {
+		height: 100vh;
+		padding: 26px;
+		background: url(../img/bg-home-splash.jpg) top left no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		&__inner {
+			position: relative;
+			height: 100%;
+			border: 4px solid #655611;
+			h1 {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: fluidize($target: 618, $context: 1868);
+				margin: 0 auto;
+				background: url(../img/hdr-thoreau.png) center center no-repeat;
+				background-size: 100% auto;
+				text-indent: -9999px;
+				line-height: 250px;
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 30px;
+					left: 15px;
+					height: 31px;
+					width: 53px;
+					background: url(../img/hdr-thoreau-the.png) center center no-repeat;
+				}
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: 18px;
+					right: -16px;
+					height: 40px;
+					width: 89px;
+					background: url(../img/hdr-thoreau-trail.png) center center no-repeat;
+				}
+			}
+		}
+	}
+
+
+
+
+
+

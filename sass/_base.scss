@@ -15,7 +15,7 @@
     }
 
     html {
-      min-height: 100%;
+      min-height: 100vh;
       margin: 0;
       padding: 0;
     }
@@ -28,6 +28,7 @@
       font-family: $fontFamily-base;
       font-size: $fontSize-base;
       line-height: $lineHeight-base;
+      // overflow-x: hidden;
     }
 
     /**
@@ -39,6 +40,7 @@
     %container {
       float: none;
       margin: 0 auto;
+      padding: 60px 0;
     }
 
     .container {
@@ -51,9 +53,8 @@
       max-width: 100%;
     }
 
-
     a {
-      color: $link-base;
+      color: $link-base ;
       &:hover, &:focus { color: $link-secondary; }
     }
 
@@ -65,13 +66,4 @@
     }
 
     /* Highlighted Text */
-    ::-moz-selection {
-      color: $color-base;
-      background: $color-secondary;
-      text-shadow: none;
-    }
-    ::selection {
-      color: $color-base;
-      background: $color-secondary;
-      text-shadow: none;
-    }
+    @include highlighter($color: #fff, $bg: #6e6e6f, $shadow: none);

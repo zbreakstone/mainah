@@ -1,0 +1,39 @@
+/*	==========================================================================
+	Animations
+	==========================================================================	*/
+
+	@-webkit-keyframes slideFromLeft {
+		0% {
+			left: -430px;
+		}
+		100% {
+			left: 0px;
+		}
+	}
+
+	@keyframes slideFromLeft {
+		0% {
+			left: -430px;
+		}
+		100% {
+			left: 0px;
+		}
+	}
+
+	@-webkit-keyframes slideFromRight {
+		0% {
+			right: -430px;
+		}
+		100% {
+			right: 0px;
+		}
+	}
+
+	@keyframes slideFromRight {
+		0% {
+			right: -430px;
+		}
+		100% {
+			right: 0px;
+		}
+	}

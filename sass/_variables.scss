@@ -4,16 +4,18 @@
 
  	// $containers: container container-fluid;
 
- 	$context: 1920;
+ 	$context: 1920; // Base screensize for determining the context for percentage conversions
+	$menus: left right;
+	$menu-type: right;
 
-	$fontFamily-base: 'Lora', serif;
-	$fontFamily-accent: 'Roboto', sans-serif;
- 	$fontSize-base: 16px;
- 	$lineHeight-base: 2.1;
- 	$fontWeight-base: normal;
+	$fontFamily-base: 'Lora', serif; // Base font-family for body styling
+	$fontFamily-accent: 'Roboto', sans-serif; // Accent font-family for headers, etc.
+ 	$fontSize-base: 16px; // Base font-size for determining relative units
+ 	$lineHeight-base: 2.1; // Base line height
+ 	$fontWeight-base: normal; // Base font-weight
 
- 	$color-base: #3F3F3F;
- 	$color-secondary: #AF8812;
+ 	$color-base: #3F3F3F;  // Base font color
+ 	$color-secondary: #AF8812; // Secondary accent color
 
- 	$link-base: $color-secondary;
-	$link-secondary: lighten($link-base, 10%);
+ 	$link-base: $color-secondary; // Base link color
+	$link-secondary: lighten($link-base, 10%); // Secondary link color (for hovers, focus, active, etc.)

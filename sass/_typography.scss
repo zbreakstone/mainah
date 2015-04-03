@@ -1,97 +1,101 @@
-/* ==========================================================================
-   Typography
-   ========================================================================== */
+/*	==========================================================================
+	Typography
+	==========================================================================	*/
 
 
-/* Basic text */
-p {} 
-small {}
-strong {}
-em {}
-cite {}
-code {}
-pre {}
+	/* Basic text */
+	p {} 
+	small {}
+	strong {}
+	em {}
+	cite {}
+	code {}
+	pre {}
 
-%glyph { // referring to subscripts and superscripts
-  position: relative;
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-}
-sup {
-	@extend %glyph;
-	top: -0.5em;
-}
-sub {
-	@extend %glyph;
-	bottom: -0.25em;
-}
-
-/* Headings */
-%heading {}
-h1 {
-	@extend %heading !optional;
-	a {}
-}
-h2 {
-	@extend %heading !optional;
-	a {}
-}
-h3 {
-	@extend %heading !optional;
-	a {}
-}
-h4 {
-	@extend %heading !optional;
-	a {}
-}
-h5 {
-	@extend %heading !optional;
-	a {}
-}
-h6 {
-	@extend %heading !optional;
-	a {}
-}
-
-/* Lists */
-%list {}
-%sublist {}
-ul {
-	@extend %list !optional;
-	ul, ol {
-		@extend %sublist !optional;
+	%glyph { // placeholder selector for subscripts and superscripts
+	  position: relative;
+	  font-size: 75%;
+	  line-height: 0;
+	  vertical-align: baseline;
 	}
-	&.unstyled {
-		list-style: none;
+	sup {
+		@extend %glyph;
+		top: -0.5em;
+	}
+	sub {
+		@extend %glyph;
+		bottom: -0.25em;
+	}
+
+	/* Headings */
+	%heading {
 		margin: 0;
 		padding: 0;
 	}
-}
-ol {
-	@extend %list !optional;
-	ul, ol {
-		@extend %sublist !optional;
+	h1 {
+		@extend %heading !optional;
+		font-size: 2em;
+		a {}
 	}
-	&.unstyled {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+	h2 {
+		@extend %heading !optional;
+		a {}
 	}
-}
-
-li {}
-
-/* Quotes */
-blockquote {
-	p {
-
+	h3 {
+		@extend %heading !optional;
+		a {}
 	}
-	small {
-		&:before {
+	h4 {
+		@extend %heading !optional;
+		a {}
+	}
+	h5 {
+		@extend %heading !optional;
+		a {}
+	}
+	h6 {
+		@extend %heading !optional;
+		a {}
+	}
 
+	/* Lists */
+	%list {}
+	%sublist {}
+	ul {
+		@extend %list !optional;
+		ul, ol {
+			@extend %sublist !optional;
+		}
+		&.unstyled {
+			list-style: none;
+			margin: 0;
+			padding: 0;
 		}
 	}
-}
+	ol {
+		@extend %list !optional;
+		ul, ol {
+			@extend %sublist !optional;
+		}
+		&.unstyled {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
 
-q:before, q:after, blockquote:before, blockquote:after {}
+	li {}
+
+	/* Quotes */
+	blockquote {
+		p {
+
+		}
+		small {
+			&:before {
+
+			}
+		}
+	}
+
+	q:before, q:after, blockquote:before, blockquote:after {}
