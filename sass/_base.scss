@@ -24,7 +24,7 @@
       @extend html;
       // Website background color and default font styles
       background: #fff;
-      color: $color-base;
+      color: $fontColor-base;
       font-family: $fontFamily-base;
       font-size: $fontSize-base;
       line-height: $lineHeight-base;
@@ -40,7 +40,7 @@
     %container {
       float: none;
       margin: 0 auto;
-      padding: 60px 0;
+      padding: 175px 0;
     }
 
     .container {
@@ -48,9 +48,14 @@
       max-width: fluidize(700, $context);
     }
 
-    .container-fluid {
+    .container--fluid {
       @extend %container;
       max-width: 100%;
+      padding: 0;
+    }
+
+    .text-center {
+      text-align: center;
     }
 
     a {

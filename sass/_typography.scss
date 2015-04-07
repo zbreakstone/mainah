@@ -4,7 +4,9 @@
 
 
 	/* Basic text */
-	p {} 
+	p {
+		font-size: fluidize($target: 13px, $context: $fontSize-base, $type: font);
+	} 
 	small {}
 	strong {}
 	em {}

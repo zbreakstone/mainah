@@ -14,25 +14,7 @@
 	      text-shadow: $shadow;
 		}
 	}
-
-	// @mixin prefixAnimation() {
-	// 	@keyframes slideFromLeft {
-	// 		0% {
-	// 			left: -430px;
-	// 		}
-	// 		100% {
-	// 			left: 0px;
-	// 		}
-	// 	}
-	// }
-
-	// $keyframes: 0 100;
-	// @each $keyframe in $keyframes {
-	// 	$keyframe {
-	// 		$property: $value;
-	// 	}
-	// }
-
+	
 	@mixin prefixer($property, $value) { // Used for creating vendor prefixes
 		-webkit-#{$property}: $value;
 		-moz-#{$property}: $value;

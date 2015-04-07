@@ -20,6 +20,7 @@
 	    - Buttons
 	4. MISCELLANOUS
 	5. MOBILE MEDIA QUERIES
+	6. ANIMATIONS
 	==========================================================================	*/
 
 
@@ -41,7 +42,6 @@
 	@import "mixins";		// Import mixins partial
 	@import "base";			// Import base partial
 	@import "typography";	// Import typography partial
-	@import "animations";	// Import animations partial
 
     /**
      * Main Styling
@@ -142,6 +142,30 @@
 
 
 	==========================================================================	*/
+	%header__menu {
+		display: block;
+		position: fixed;
+		top: 30px;
+		z-index: 1;
+		width: 44px;
+		height: 44px;
+		background: #fff;
+		color: $gray-base;
+		text-align: center;
+		vertical-align: middle;
+		cursor: pointer;
+	}
+	%header__maine-menu {
+		position: absolute;
+		top: 46px;
+		right: 56px;
+		width: 31px;
+		cursor: pointer;
+	}
+	%fa--bars {
+		font-size: 28px;
+		line-height: 44px;
+	}
 
 	.hero {
 		height: 100vh;
@@ -154,21 +178,13 @@
 			height: 100%;
 			border: 4px solid #655611;
 			.header {
-				&__menu {
-					display: block;
-					position: fixed;
-					top: 30px;
-					left: 30px;
-					z-index: 1;
-					width: 44px;
-					height: 44px;
-					background: #fff;
-					text-align: center;
-					vertical-align: middle;
-					cursor: pointer;
-					.fa.fa-bars {
-						font-size: 28px;
-						line-height: 44px;
+				@each $menu in $menus {
+					&__menu--#{$menu} {
+						@extend %header__menu;
+						#{$menu}: 30px;
+						.fa.fa-bars {
+							@extend %fa--bars;
+						}
 					}
 				}
 				&__logo {
@@ -178,12 +194,15 @@
 					@include prefixer($property: transform, $value: translateX(-50%));
 					width: 122px;
 				}
-				&__maine-menu {
-					position: absolute;
-					top: 46px;
-					right: 56px;
-					width: 31px;
-					cursor: pointer;
+				@each $menu in $menus {
+					&__maine-menu--#{$menu} {
+						@extend %header__maine-menu;
+						@if $menu == right {
+							left: 56px;
+						} @else {
+							right: 56px;
+						}
+					}
 				}
 			}
 			h1 {
@@ -222,7 +241,91 @@
 	}
 
 
+	%chapter {
+		position: relative;
+		display: inline-block;
+		float: left;
+		width: calc(100% / 3);
+		height: 90vh;
+		overflow: hidden;
+	}
+	.chapters {
+		background: #000;
+		&__row {
+			@extend %clearfix;
+			.chapter {
+				@extend %chapter;
+					.chapter__image {
+						width: 100%;
+						height: 100%;
+						background: #fff;
+						background-size: cover;
+						background-repeat: no-repeat;
+						@include prefixer($property: transition, $value: all .3s linear);
+					}
+				@each $chapter in $chapters {
+					&:nth-child(#{$chapter}) .chapter__image {
+						background-image: url(../img/chapters/bg-ch#{$chapter}.jpg);
+					}
+					@if $chapter == 1 {
+						&:nth-child(#{$chapter}) .chapter__inner {
+							box-shadow: none;
+						}
+					}
+				}
+				&:hover .chapter__image {
+					opacity: 0.6;
+					@include prefixer($property: transform, $value: scale(1.1));
+				}
+				&__inner {
+					position: absolute;
+					top: 17px;
+					left: 17px;
+					width: calc(100% - 34px);
+					height: calc(100% - 34px);
+					box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+					.inner__content {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						@include prefixer($property: transform, $value: translate(-50%, -50%));
+						img {
+							display: block;
+							text-align: center;
+							&.maine-thing-logo {
+								width: 100%;
+								max-width: 147px;
+								margin: 0 auto 24px;
+							}
+							&.issue-number {
+								width: 100%;
+								max-width: 210px;
+								margin: 0 auto;
+							}
+						}
+						p {
+							position: relative;
+							width: 100%;
+							height: 100px;
+							background: url(../img/chapters/hdr-guided-adventure.png) center center no-repeat;
+							background-size: cover;
+							text-indent: -9999px;
+						}
+					}
+				}
+			}
+		}
+	}
 
 
+/*	==========================================================================
+
+
+	6. ANIMATIONS                                        
+
+
+	==========================================================================	*/
+	
+	@import "animations";	// Import animations partial
 
 
